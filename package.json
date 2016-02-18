@@ -1,6 +1,6 @@
 {
   "name": "node-static-map",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "test node static map with mapbox-gl-node + mapzen tiles",
   "main": "index.js",
   "author": "Yan Zhuang <yzhuang@graphiq.com>",
