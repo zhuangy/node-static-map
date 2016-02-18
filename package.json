@@ -7,13 +7,14 @@
   "private": true,
   "license": "UNLICENSED",
   "files": [
-      "index.js",
-      "styles"
+    "index.js",
+    "styles"
   ],
   "dependencies": {
     "lodash": "^4.4.0",
     "mapbox-gl-native": "2.2.0",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "sharp": "^0.13.0"
   },
   "devDependencies": {
     "express": "^4.13.4"
