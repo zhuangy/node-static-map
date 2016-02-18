@@ -1,0 +1,87 @@
+{
+	"version": 8,
+	"name": "Empty",
+	"sources": {
+		"osm": {
+			"type": "vector",
+			"tiles": ["https://vector.mapzen.com/osm/all/{z}/{x}/{y}.mvt?api_key=vector-tiles-LM25tq4"]
+		}
+	},
+	"glyphs": "./styles/glyphs/{range}.pbf",
+	"layers": [
+		{
+			"id": "background",
+			"type": "background",
+			"paint": {
+				"background-color": "#41afa5"
+			}
+		}, {
+			"id": "water",
+			"type": "fill",
+			"source": "osm",
+			"source-layer": "water",
+			"filter": ["==", "$type", "Polygon"],
+			"paint": {
+				"fill-color": "#3887be",
+				"fill-opacity": 0.5
+			}
+		}, {
+			"id": "roads",
+			"type": "fill",
+			"source": "osm",
+			"source-layer": "roads",
+			"filter": ["==", "$type", "Polygon"],
+			"paint": {
+				"fill-color": "black"
+			}
+		},
+		{
+	      "id": "city-label",
+	      "type": "symbol",
+	      "source": "osm",
+	      "source-layer": "places",
+	      "filter": [
+	        "all",
+	        [
+	          "==",
+	          "$type",
+	          "Point"
+	        ],
+	        [
+	          "==",
+	          "kind",
+	          "city",
+	          "county",
+	          "district"
+	        ]
+	      ],
+	      "layout": {
+	        "text-field": "{name}",
+	        "text-font": [
+	          "Open Sans Semibold",
+	          "Arial Unicode MS Bold"
+	        ],
+	        "text-max-width": 10,
+	        "text-letter-spacing": 0.1,
+	        "text-size": {
+	          "stops": [
+	            [
+	              8,
+	              14
+	            ],
+	            [
+	              12,
+	              21
+	            ]
+	          ]
+	        }
+	      },
+	      "paint": {
+	        "text-color": "#384646",
+	        "text-halo-color": "rgba(255,255,255,0.5)"
+	      },
+	      "min-zoom": 10,
+	      "max-zoom": 14
+	    }
+	]
+}
